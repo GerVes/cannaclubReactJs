@@ -36,3 +36,14 @@
     transform: rotate(360deg);
   }
 }
+
+
+card {
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+  margin: 0 0 30px;
+  position: relative;
+  display: flex;
+  transition: all 300ms linear;
+}
