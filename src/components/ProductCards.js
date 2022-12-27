@@ -7,7 +7,7 @@ const ProductCards = () => {
             <Card className="cardProducto" style={{ width: '18rem' }}>
                 <Card.Img variant="top" src="./24kgold.jpg" />
                 <Card.Body>
-                    <Card.Title>24kgold</Card.Title>
+                    <Card.Title >24kgold</Card.Title>
                     <Card.Text>
 
                         <br />
@@ -28,7 +28,7 @@ const ProductCards = () => {
             <Card className="cardProducto" style={{ width: '18rem' }}>
                 <Card.Img variant="top" src="./cream caramel.jpg" />
                 <Card.Body>
-                    <Card.Title>Cream Caramel</Card.Title>
+                    <Card.Title >Cream Caramel</Card.Title>
                     <Card.Text>
                         <br />
                         Genetica: Indica dominante (90%)
