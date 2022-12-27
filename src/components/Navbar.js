@@ -1,3 +1,4 @@
+import CartWidget from "./CartWidget";
 
 
 const Navbar = () => {
@@ -11,9 +12,9 @@ const Navbar = () => {
 
             <a href="#" className = "header__link">Galeria</a>
 
-            <span className="material-icons header__link">shopping_cart</span>
+            <CartWidget />
 
-            <span className = "numeroHardcodeado header__link">2</span>
+            
         </nav>
     )
 }
