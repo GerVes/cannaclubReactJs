@@ -8,61 +8,56 @@ import Card from 'react-bootstrap/Card'
 
 const ItemList = ({ productos }) => {
 
-
-
-
-    const [productosFiltrados, setProductosFiltrados] = useState()
+    const [productosFiltrados, setProductosFiltrados] = useState(productos)
     const [txtFilterValue, setTxtFilterValue] = useState()
     const [selectValue, setSelectValue] = useState()
 
     useEffect(() => {
-        
-
         setProductosFiltrados(productos);
-        console.log(productosFiltrados)
     }, [])
 
     const handleFilter = e => {
         console.log(e.target.value)
-        if (!txtFilterValue && e.target.value == "todos") {
+        const filterType = e.target.dataset.filter;
+
+        if ((filterType == 'nombre' && !e.target.value && !selectValue) || (filterType == 'variedad' && !txtFilterValue && e.target.value == "todos")) {
             setProductosFiltrados(productos);
             return ;
         }
         const copia = productos.filter(producto => {
             if (e.target.dataset.filter == "nombre") {
                 setTxtFilterValue(e.target.value)
-                if (selectValue && selectValue != "todos") {
-                    if (producto.nombre.toLowerCase().includes(e.target.value.toLowerCase())) {
-                        return producto
+                if (e.target.value && selectValue != "Todos") {
+                    if (producto.nombre.toLowerCase().includes(e.target.value.toLowerCase()) && producto.variedad == selectValue) {
+                        return producto;
+                    }
+                } else if(!e.target.value && selectValue != "Todos"){
+                    if (producto.variedad == selectValue) {
+                        return producto;
                     }
                 } else {
-                    if (producto.nombre.toLowerCase().includes(e.target.value.toLowerCase()) && producto.variedad == selectValue) {
-                        return producto
+                    if (producto.nombre.toLowerCase().includes(e.target.value.toLowerCase())) {
+                        return producto;
                     }
                 }
-
             }
-
-
 
             if (e.target.dataset.filter == "variedad") {
                 setSelectValue(e.target.value)
-                if (txtFilterValue && e.target.value == "todos") {
-                    if (producto.nombre.toLowerCase().includes(e.target.value.toLowerCase())) {
-                        return producto
+                if (txtFilterValue && e.target.value == "Todos") {
+                    if (producto.nombre.toLowerCase().includes(txtFilterValue.toLowerCase())) {
+                        return producto;
                     }
-                }  else if (txtFilterValue && e.target.value != "todos") {
-                    if (producto.nombre.toLowerCase().includes(e.target.value.toLowerCase()) && producto.variedad == selectValue) {
-                        return producto
+                }  else if (txtFilterValue && e.target.value != "Todos") {
+                    if (producto.nombre.toLowerCase().includes(txtFilterValue.toLowerCase()) && producto.variedad == e.target.value) {
+                        return producto;
                     }
-                } else if (!txtFilterValue && e.target.value != "todos") {
-                    if (producto.variedad == selectValue) {
-                        return producto
+                } else if (!txtFilterValue && e.target.value != "Todos") {
+                    if (producto.variedad == e.target.value) {
+                        return producto;
                     }
                 }
             }
-            
-
         })
         setProductosFiltrados(copia)
     }
@@ -81,10 +76,10 @@ const ItemList = ({ productos }) => {
             <nav>
                 <input data-filter="nombre" onChange={handleFilter} type="text" placeholder="Nombre del producto"></input>
 
-                <select data-filter="categoria" onChange={handleFilter}>
-                    <option value="todos">Todos</option>
-                    <option value="sativa">Sativa</option>
-                    <option value="indica">Indica</option>
+                <select data-filter="variedad" onChange={handleFilter}>
+                    <option value="Todos">Todos</option>
+                    <option value="Sativa">Sativa</option>
+                    <option value="Indica">Indica</option>
 
                 </select>
             </nav>
