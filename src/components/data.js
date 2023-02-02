@@ -5,7 +5,7 @@ export const geneticas = [
         "variedad": "Indica",
         "THC": "30%",
         "precio": "$100",
-        "img": "./gelato33.jpg",
+        "img": "/gelato33.jpg",
         "sabor": "Citrico, fresco",
         "efecto" : "Fuerte"
 
@@ -17,7 +17,7 @@ export const geneticas = [
         "variedad": "Sativa",
         "THC": "25%",
         "precio": "$120",
-        "img": "./ak47.jpg",
+        "img": "/ak47.jpg",
         "sabor": "Dulce, terroso",
         "efecto" : "Fuerte"
     },
@@ -28,7 +28,7 @@ export const geneticas = [
         "variedad": "Sativa",
         "THC": "25%",
         "precio": "$150",
-        "img": "./24kgold.jpg",
+        "img": "/24kgold.jpg",
         "sabor": "Citrico, Terroso",
         "efecto" : "Equilibrado"
     },
@@ -38,7 +38,7 @@ export const geneticas = [
         "variedad": "Indica",
         "THC": "20%",
         "precio": "$180",
-        "img": "./critical jack.jpg",
+        "img": "/critical jack.jpg",
         "sabor": "Dulce, citrico",
         "efecto" : "Suave"
     },
@@ -48,7 +48,7 @@ export const geneticas = [
         "variedad": "Indica",
         "THC": "26%",
         "precio": "$200",
-        "img": "./black domina.jpg",
+        "img": "/black domina.jpg",
         "sabor": "Pino, terroso",
         "efecto" : "Equilibrado"
     },
@@ -58,7 +58,7 @@ export const geneticas = [
         "variedad": "Sativa",
         "THC": "22%",
         "precio": "$250",
-        "img": "./blue gelato.jpg",
+        "img": "/blue gelato.jpg",
         "sabor": "Frutal, citrico",
         "efecto" : "Fuerte"
     },
@@ -68,7 +68,7 @@ export const geneticas = [
         "variedad": "Indica",
         "THC": "27%",
         "precio": "$300",
-        "img": "./cream caramel.jpg",
+        "img": "/cream caramel.jpg",
         "sabor": "Caramelo, citrico",
         "efecto" : "Suave"
     }

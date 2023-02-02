@@ -7,7 +7,7 @@ const Home = () => {
     return (
         <div className="bg-img" style={divStyle}>
             <p className="img-text">
-                <b>Website under construction</b>
+                <b>Website under construction♥</b>
             </p>
 
         </div>

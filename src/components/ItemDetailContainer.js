@@ -31,9 +31,9 @@ useEffect(() => {
     
     producto ? <cards>
     <Card className="cardProducto" style={{ width: '18rem' }}>
-        <Card.Img variant="top" src="{producto.img}"/>
+        <Card.Img variant="top" src={producto.img}/>
         <Card.Body>
-            <Card.Title >{producto.id}</Card.Title>
+            <Card.Title >{producto.nombre}</Card.Title>
             <Card.Text>
 
                 <br />
