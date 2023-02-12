@@ -8,7 +8,7 @@ const Footer = () => {
                 <a href="https://www.instagram.com/blazeit_sqr/" className="footer__link" target="_blank" >Instagram</a>
             </div>
             <div>
-                <img src="./logoNegroSF.png" alt="" className="footer__img" />
+                <img src="/logoNegroSF.png" alt="" className="footer__img" />
             </div>
 
         </footer>

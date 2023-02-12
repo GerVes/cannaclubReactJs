@@ -8,15 +8,16 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyAjM04Ss2oQvKCBnNMfOEvlV-oKuMBJt0I",
-    authDomain: "entregafinal-1c279.firebaseapp.com",
-    projectId: "entregafinal-1c279",
-    storageBucket: "entregafinal-1c279.appspot.com",
-    messagingSenderId: "219094870898",
-    appId: "1:219094870898:web:3e4f75d55b550aa8a40beb"
+  apiKey: "AIzaSyAjM04Ss2oQvKCBnNMfOEvlV-oKuMBJt0I",
+  authDomain: "entregafinal-1c279.firebaseapp.com",
+  projectId: "entregafinal-1c279",
+  storageBucket: "entregafinal-1c279.appspot.com",
+  messagingSenderId: "219094870898",
+  appId: "1:219094870898:web:3e4f75d55b550aa8a40beb"
   };
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+
 
 //Esta es una variable que representa "la pestaña Firestore Database o la base de datos"
 export const db = getFirestore(app);

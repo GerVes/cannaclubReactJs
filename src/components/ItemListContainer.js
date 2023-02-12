@@ -1,41 +1,65 @@
 import { useEffect, useState } from 'react';
 import ItemList from './ItemList';
 import { useParams } from 'react-router-dom';
-import { geneticas } from './data.js';
+import { getProducts } from './data.js';
+import { collection, getDocs, addDoc } from 'firebase/firestore';
+import { db } from "../firebase";
 
+
+
+
+
+//getDocs(Query, ...)
 
 
 const ItemListContainer = () => {
 
-
-
-
-
     const [load, setLoad] = useState(true) // no parte desde false ya que no estoy trayendo desde URL sino la datra desde un json local. por ende no hay espera.
     const [productos, setProductos] = useState([])
-
-    const props = useParams()
+    const { variedad } = useParams()
 
 
     useEffect(() => {
 
+        const productosCollection = collection(db, "productos");
+        //getDocs(Query, ...)
 
-        const productos = geneticas
-        console.log(geneticas)
+        const pedidoFirestore = getDocs(productosCollection)
+        console.log(pedidoFirestore)
 
-        setProductos(productos)
+        pedidoFirestore
+            .then((respuesta) => {
 
 
+                const productos = respuesta.docs.map(doc => ({ ...doc.data(), id: doc.id }))
+
+                console.log(productos)
+
+            })
+
+            .catch((error) => {
+                console.log(error)
+            })
+
+
+
+
+        // getProducts()
+        //     .then((res) => {
+        //         if (variedad) {
+        //             setProductos(res.filter((prod) => prod.variedad === variedad))
+        //         } else {
+        //             setProductos(res)
+        //         }
+        //     })
+        //     .catch((error) => console.log(error))
+        //     .finally(() => setLoad(false))
     }, [])
-
-
-
-
 
     return (
         <>
 
-            {load ? <p className="itemListContainer__par">Aqui se encuentran las geneticas que pueden elegir los socios para incluir en su cuota de este mes:</p> : "Cargando productos..."}
+            {!load ? <p className="itemListContainer__par">Aqui se encuentran las geneticas que pueden elegir los socios para incluir en su cuota de este mes:</p> : <p>Cargando productos...</p>}
 
             <ItemList productos={productos} />
 
@@ -44,8 +68,6 @@ const ItemListContainer = () => {
 }
 
 export default ItemListContainer;
-
-
 
 // import { useEffect, useState } from 'react';
 // import ItemList from './ItemList';

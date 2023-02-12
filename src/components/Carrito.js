@@ -1,3 +1,4 @@
+import { db } from "../firebase";
 
 const Carrito = () => {
     return (

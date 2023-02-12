@@ -6,21 +6,20 @@ import ItemListContainer from './ItemListContainer';
 import { BrowserRouter } from 'react-router-dom';
 import ItemList from './ItemList';
 import Item from './Item';
+import CustomProvider from './CustomProvider';
+
 
 
 function App() {
   return (
     <>
-      <BrowserRouter>
-
-        <Header />
-
-
-        {/* <ItemListContainer greeting="Bienvenidos a Green Doors Cannabis Club" /> */}
-        <Main />
-        <Footer />
-      </BrowserRouter>
-
+      <CustomProvider>
+        <BrowserRouter>
+          <Header />
+          <Main />
+          <Footer />
+        </BrowserRouter>
+      </CustomProvider>
     </>
   )
 }
